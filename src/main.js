@@ -120,26 +120,3 @@ class ElectricGuitar extends Guitar {
             console.log(`${this.name} is turned off. turn it on`);
     }
 }
-
-// ========== test drive for the class ====================== 
-const electricGuitar = new ElectricGuitar("Electric Guitar", 
-                     "United States of America", 6, "steel", true, false);
-
-console.log(electricGuitar);
-electricGuitar.play();
-electricGuitar.setOnState(true);
-electricGuitar.play();
-
-const classicalGuitar = new ClassicalGuitar("Baroque", "Spain", 6, "nylon",
-                                          false, ["microphone"]);
-console.log(classicalGuitar);
-classicalGuitar.play();
-console.log(classicalGuitar.getOrigin());
-
-const steelStringGuitar = new SteelStringGuitar("Dreadnought",
-                            "United States of America", 6, "steel", false, ["microphone","transducers"]);
-console.log(steelStringGuitar);
-steelStringGuitar.play();
-
-console.log(steelStringGuitar.family);
-console.log(electricGuitar.family);
