@@ -9,10 +9,9 @@ export default class SteelStringGuitar extends AcousticGuitar {
 
     /**
      * @param {void}
-     * returns a string denoting the instrument is playing
      * This demonstrates Polymorphism, as this class inherits the play
      * method from the base class and its defining a specific behaviour for
-     * this class
+     * this class.
      */
 
     play() {
