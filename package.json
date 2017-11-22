@@ -4,7 +4,7 @@
   "description": "A repo of Object-Oriented Programming exercises",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register ./test/*.js"
+    "test": "mocha --compilers js:babel-core/register ./test/test.js"
   },
   "repository": {
     "type": "git",
