@@ -24,7 +24,7 @@ describe('Classes', () => {
         
         it('should return a string stating that the instrument is playing', () => {
             jazz.setOnState(true);
-            assert.equal(jazz.play(), 'Jazz is playing');
+            assert.equal(jazz.play(), 'The Electric Guitar, Jazz is playing');
         });
     });
 

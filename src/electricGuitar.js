@@ -15,10 +15,16 @@ export default class ElectricGuitar extends Guitar {
         this.isOn = isOn;
     }
 
+    /**
+     * @param {void}
+     * This demonstrates 'Polymorphism'
+     * Play is inherited and defines its specific behaviour for this class.
+     */
+
     play() {
         if (this.isOn)
-            return `${this.name} is playing`;
+            return `The Electric Guitar, ${this.name} is playing`;
         else
-            return `${this.name} is turned off. turn it on`;
+            return `The Electric Guitar, ${this.name} is turned off. turn it on`;
     }
 }
