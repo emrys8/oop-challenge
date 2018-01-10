@@ -3,62 +3,87 @@
  * {class}
  */
 export default class Guitar {
-    constructor(name, origin, numStrings,
-                stringMaterial, isElectricallyOperated) {
-                    this.name = name;
-                    this.origin = origin;
-                    this.numStrings = numStrings;
-                    this.stringMaterial = stringMaterial;
-                    this.isElectricallyOperated = isElectricallyOperated;
-                    this.range = 0;
-    }
+    constructor(gName, gOrigin, gNumStrings,
+                gStringMaterial, gIsElectricallyOperated) {
 
-    getName() {
-        return this.name;
+                    // private variables
+                    let name, origin, numStrings, stringMaterial, 
+                    isElectricallyOperated;
+
+                    let family = "Stringed";
+
+                    // privileged methods
+                    this.getName = function() {
+                        return name;
+                    }
+
+                    this.setName = function(newName) {
+                        if (typeof newName != "string") {
+                            throw new Error("Guitar name can only be strings");
+                        }
+
+                        name = newName;
+                    }
+
+                    this.getOrigin = function() {
+                        return origin;
+                    }
+
+                    this.setOrigin = function(newOrigin) {
+                        origin = newOrigin;
+                    }
+
+                    this.setNumStrings = function(newNumStrings) {
+                        numStrings = newNumStrings;
+                    }
+
+                    this.getNumStrings = function() {
+                        return numStrings;
+                    }
+
+                    this.setStringMaterial = function(newStringMaterial) {
+                        stringMaterial = newStringMaterial;
+                    }
+
+                    this.getStringMaterial = function() {
+                        return stringMaterial;
+                    }
+
+                    this.setIsElectricallyOperated = function(electricallyOperated) {
+                        isElectricallyOperated = electricallyOperated;
+                    }
+
+                    this.getIsElectricallyOperated = function() {
+                        return isElectricallyOperated;
+                    }
+
+                    this.getFamily = function() {
+                        return family;
+                    }
+
+                    this.setName(gName);
+                    this.setOrigin(gOrigin);
+                    this.setNumStrings(gNumStrings);
+                    this.setStringMaterial(gStringMaterial);
+                    this.setIsElectricallyOperated(gIsElectricallyOperated);
     }
 
     /**
-     * @param {str} name
-     * It sets the name of the Guitar to a new name if the condition is met
-     * This demonstrates Encapsulation
-     */
-
-    setName(name) {
-        if (typeof newName != "string") {
-            throw new Error("Guitar name can only be strings");
-        }
-
-        this.name = name;
-    } 
-    
-    getOrigin() {
-        return this.origin;
-    }
-
-    setOrigin(newOrigin) {
-        this.origin = newOrigin;
-    }
-
-    /**
-     * 
      * @param {str} numStrings 
      * adds more strings to the guitar
      * This demonstrates data hiding and encapsulation
      */
+
     addStrings(numStrings) {
-        // demonstrates data hiding and encapsulation
         if (numStrings > 12) {
-            return "maximum guitar strings that can be added is 12";
+            throw new Error("maximum guitar strings that can be added is 12");
         }
+
         this.numStrings += numStrings;
     }
 
     play() {
         return "The guitar is playing";
-    }
-
-    getStringMaterial() {
-        return this.stringMaterial;
     }
 
     setMusicGenres(musicGenres) {
@@ -67,37 +92,6 @@ export default class Guitar {
 
     getMusicGenres() {
         return this.musicGenres;
-    }
-
-    increaseRange(range) {
-        this.range += range;
-    }
-    
-    decreaseRange(range) {
-        this.range -= range;
-    }
-
-    setRange(range) {
-        this.range = range;
-    }
-
-    getRange() {
-        return this.range;
-    }
-
-    /**
-     * @param {void}
-     * returns the family of the instrument
-     * This demonstrates Data Hiding
-     * family is a getter property, and has no setter property. It cannot be altered
-     * by a user of the class
-     */
-    get family() {
-        return "Stringed";
-    }
-
-    getNumStrings() {
-        return this.numStrings;
     }
  }
 
