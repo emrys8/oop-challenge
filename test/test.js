@@ -36,7 +36,7 @@ describe('Classes', () => {
             assert.equal(dreadnought.getFamily(), "Stringed");
         })
 
-        it('should return an error string', () => {
+        it('should throw an error', () => {
             assert.throws(() => {
                 dreadnought.addStrings(15);
             });
