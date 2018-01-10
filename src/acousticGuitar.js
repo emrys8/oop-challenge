@@ -6,18 +6,22 @@ import Guitar from './guitar';
  * and added a new owned property
  */
 export default class AcousticGuitar extends Guitar {
+    
     constructor(name, origin, numStrings,
-        stringMaterial, isElectricallyOperated, soundProjectionMeans) {
-            super(name, origin, numStrings, stringMaterial, isElectricallyOperated,soundProjectionMeans);
-                this.soundProjectionMeans = soundProjectionMeans;
-        }
+        stringMaterial, isElectricallyOperated, gSoundProjectionMeans) {
+            super(name, origin, numStrings, stringMaterial, isElectricallyOperated);
+                
+            let soundProjectionMeans;
 
-        getSoundProjectionMeans() {
-            return this.soundProjectionMeans;
-        }
+            this.setSoundProjectionMeans = function(newSoundProjectionMeans) {
+                soundProjectionMeans = newSoundProjectionMeans;
+            }
 
-        setSoundProjectionMeans(newSoundProjectionMeans) {
-            this.soundProjectionMeans = newSoundProjectionMeans;
+            this.getSoundProjectionMeans = function() {
+                return soundProjectionMeans;
+            }
+
+            this.setSoundProjectionMeans(gSoundProjectionMeans);
         }
 
         /**

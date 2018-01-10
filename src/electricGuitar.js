@@ -1,18 +1,22 @@
 import Guitar from './guitar';
 
 export default class ElectricGuitar extends Guitar {
+
     constructor (name, origin, numStrings, stringMaterial, 
-                isElectricallyOperated, isOn) {
+                isElectricallyOperated, gIsOn) {
                      super(name, origin, numStrings, stringMaterial, isElectricallyOperated);
-                           this.isOn = isOn;
-    }
 
-    getOnState() {
-        return this.isOn;
-    }
+                     let isOn;
 
-    setOnState(isOn) {
-        this.isOn = isOn;
+                     this.getOnState = function() {
+                         return isOn;
+                     }
+
+                     this.setOnState = function(isOnState) {
+                         isOn = isOnState;
+                     }
+
+                     this.setOnState(gIsOn);
     }
 
     /**
@@ -22,9 +26,9 @@ export default class ElectricGuitar extends Guitar {
      */
 
     play() {
-        if (this.isOn)
-            return `The Electric Guitar, ${this.name} is playing`;
+        if (this.getOnState())
+            return `The Electric Guitar, ${this.getName()} is playing`;
         else
-            return `The Electric Guitar, ${this.name} is turned off. turn it on`;
+            return `The Electric Guitar, ${this.getName()} is turned off. turn it on`;
     }
 }

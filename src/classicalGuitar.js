@@ -1,11 +1,26 @@
 import AcousticGuitar from './acousticGuitar';
 
 export default class ClassicalGuitar extends AcousticGuitar {
+
     constructor(name, origin, numStrings, stringMaterial,
-                isElectricallyOperated, soundProjectionMeans) {
+                isElectricallyOperated, gSoundProjectionMeans) {
                     super(name, origin, numStrings, stringMaterial,
                         isElectricallyOperated, soundProjectionMeans);
-                }
+
+            let soundProjectionMeans;
+
+            this.setSoundProjectionMeans = function(newSoundProjectionMeans) {
+                soundProjectionMeans = newSoundProjectionMeans;
+            }
+
+            this.getSoundProjectionMeans = function() {
+                return soundProjectionMeans;
+            }
+
+            this.setSoundProjectionMeans(gSoundProjectionMeans);
+    }
+
+                
     
     /**
      * @param {void}

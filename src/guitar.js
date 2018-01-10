@@ -79,7 +79,10 @@ export default class Guitar {
             throw new Error("maximum guitar strings that can be added is 12");
         }
 
-        this.numStrings += numStrings;
+        let currentNumStrings = this.getNumStrings();
+        currentNumStrings += numStrings;
+
+        this.setNumStrings(currentNumStrings);
     }
 
     play() {

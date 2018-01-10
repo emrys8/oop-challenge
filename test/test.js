@@ -33,11 +33,13 @@ describe('Classes', () => {
                                  false, ["microphone", "transducers"]);
         
         it('should return "Stringed" for instrument family', () => {
-            assert.equal(dreadnought.family, "Stringed");
+            assert.equal(dreadnought.getFamily(), "Stringed");
         })
 
         it('should return an error string', () => {
-            assert.equal(dreadnought.addStrings(15), "maximum guitar strings that can be added is 12")
+            assert.throws(() => {
+                dreadnought.addStrings(15);
+            });
         });
     });
 });
