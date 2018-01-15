@@ -1,6 +1,6 @@
 /**
- * modelling a 'Guitar' using OOP concepts
- * {class}
+ * 
+ * @class Guitar
  */
 export default class Guitar {
     constructor(gName, gOrigin, gNumStrings,
@@ -69,8 +69,9 @@ export default class Guitar {
     }
 
     /**
-     * @param {str} numStrings 
-     * adds more strings to the guitar
+     * @method addStrings
+     * @param {String} numStrings 
+     * Adds more strings to the guitar
      * This demonstrates data hiding and encapsulation
      */
 
@@ -89,6 +90,12 @@ export default class Guitar {
         return "The guitar is playing";
     }
 
+    /**
+     * 
+     * @param {[String]} musicGenres
+     * @return {}
+     * Assigns an array of music array to the instance
+     */
     setMusicGenres(musicGenres) {
         this.musicGenres = musicGenres;
     }
